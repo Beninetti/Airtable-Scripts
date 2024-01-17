@@ -63,8 +63,7 @@ async function updateChildren (children, trigger = null) {
     }));
 
     while (childUpdates.length) {
-        table.updateRecordsAsync(childUpdates.slice(0, 50));
-        childUpdates = childUpdates.slice(50);
+        table.updateRecordsAsync(childUpdates.splice(0, 50));
     }
 }
 
