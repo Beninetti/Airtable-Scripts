@@ -42,8 +42,7 @@ async function updateParents (parents, removalId) {
     }));
 
     while (parentUpdates.length) {
-        table.updateRecordsAsync(parentUpdates.slice(0, 50));
-        parentUpdates = parentUpdates.slice(50);
+        table.updateRecordsAsync(parentUpdates.splice(0, 50));
     }
 }
 
